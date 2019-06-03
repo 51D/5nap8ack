@@ -51,8 +51,8 @@ tail -f /snapshots/home/user/Important_Files/rsync.log
 #### The next prompt is just letting you know that job is over and where some data about the previous job is saved. 
 ```
 Snapshot maintainence complete.
-Saving variables for later use in /home/user/.snapshots/home/user/Important_Files/..
+Saving variables for later use in ~/.snapshots/home/user/Important_Files/..
 Press [ENTER] to exit.
 
 ```
-##### This data is for the automation feature, this is the next part of the tool im going to be implementing. I still haven't quite worked out how this would best be executed and what would be the best route to maximize iteroperability and minimize any required dependencies.
+##### This data is for the automation feature, this is the next part of the tool that i will be implementing. I still haven't quite worked out how this would best be executed and what would be the best route to maximize iteroperability and minimize any required dependencies. I will also add the ability to create compressed images of whole partitions as well, that will certainly increase productivity. The partition method will be much more convenient but it will come at the cost of bit of file integrity. So if your data is irreplaceable i would stick with the current rsync method.
