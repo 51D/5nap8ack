@@ -85,7 +85,7 @@ sleep .5
 if [[ ! -e $SNAP  ]]
 	then
 		echo="Creating directories for initial snapshot"
-		mkdir $SNAP
+		mkdir -p $SNAP
 fi
 
 sleep .5
