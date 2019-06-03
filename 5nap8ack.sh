@@ -5,9 +5,7 @@
 
 # config vars
 echo "This is a generic script for automating backsups or pseudo-snapshots."
-sleep .5
 echo "Verifying configuration directory..."
-sleep .5
 
 if [[ ! -e $HOME/.snapshots ]]
 then
@@ -15,7 +13,6 @@ then
 	mkdir $HOME/.snapshots
 fi
 
-sleep .5
 echo "Type the directory you want to create a snapshot of. eg. "/home/""
 read SRC
 sleep .5
@@ -119,17 +116,17 @@ sleep .5
 
 echo "Snapshot maintainence complete."
 sleep .5
-echo "Saving variables for later use in $HOME/.snapshots/variables.."
+echo "Saving variables for later use in $HOME/.snapshots/$SRC.."
 sleep .5
 
 if [[ ! -e "$HOME/.snapshots/$DATETAG" ]]
 then
-	echo $SRC >> $HOME/.snapshots/$DATETAG.vars
-	echo $DB >> $HOME/.snapshots/$DATETAG.vars
-	echo $DATETAG >> $HOME/.snapshots/$DATETAG.vars
-	echo $FULLPATH >> $HOME/.snapshots/$DATETAG.vars
-	echo $OPTS >> $HOME/.snapshots/$DATETAG.vars
-echo $SNAP >> $HOME/.snapshots/$DATETAG.vars
+	echo $SRC >> $HOME/.snapshots/$SRC.$DATETAG.vars
+	echo $DB >> $HOME/.snapshots/$SRC.$DATETAG.vars
+	echo $DATETAG >> $HOME/.snapshots/$SRC.$DATETAG.vars
+	echo $FULLPATH >> $HOME/.snapshots/$SRC.$DATETAG.vars
+	echo $OPTS >> $HOME/.snapshots/$SRC.$DATETAG.vars
+echo $SNAP >> $HOME/.snapshots/$SRC.$DATETAG.vars
 fi
 
 sleep .5
