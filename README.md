@@ -1,8 +1,9 @@
 # [5nap_8ack]
 ###### Created by 51D
-## A simple tool for creating backups/snapshots of files or partitions. 
-#### It is currently written for bash specifically, I'm working on getting it ported over to python soon to deal with some interoperability issues.
-##### To download and run the script simply paste the commands below in any terminal. I would suggest running the script as root to make sure you don't have any errors due to insufficient file permissions.
+## A simple tool for creating backups/snapshots of files.
+##### It is currently written for bash specifically, I'm working on getting it ported over to python soon to deal with some interoperability issues. Support for creating snapshots of partitions and automating scheduled jobs is coming soon.
+
+##### To download and run the script simply paste the commands below in any terminal. I would suggest running the script as root to make sure you don't have any errors due to insufficient file permissions. The only dependency is "rsync" at the moment.
 ```
 git clone https://github.com/51D/5nap8ack.git 
 cd 5nap*
@@ -46,3 +47,12 @@ Y
 Rsync has started check the progress with tail -f...
 tail -f /snapshots/home/user/Important_Files/rsync.log
 ```
+
+#### The next prompt is just letting you know that job is over and where some data about the previous job is saved. 
+```
+Snapshot maintainence complete.
+Saving variables for later use in /home/user/.snapshots/home/user/Important_Files/..
+Press [ENTER] to exit.
+
+```
+##### This data is for the automation feature, this is the next part of the tool im going to be implementing. I still haven't quite worked out how this would best be executed and what would be the best route to maximize iteroperability and minimize any required dependencies.
